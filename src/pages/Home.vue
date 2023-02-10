@@ -1,6 +1,6 @@
 <template>
   <main class="
-    flex flex-col justify-center items-center  text-white w-full sm:h-screen h-auto py-10 sm:p-0 gap-y-10"
+    flex flex-col justify-center items-center  text-white w-full h-auto py-10 gap-y-10"
   >
     <section class="w-full md:w-10/12  flex flex-col justify-center items-center">
       <label for="pokemonsList" class="lg:text-4xl md:text-2xl sm:text-xs	antialiased">Escolha um Pokémon</label>
@@ -18,7 +18,7 @@
       </datalist>
       <p v-if="data.error" class="mt-2 text-red-500	font-bold	">Por favor selecione um Pokémon!</p>
     </section>
-    <section class="w-full lg:w-10/12 p-4 flex flex-col md:flex-row gap-6 justify-center items-stretch md:items-center" v-if="data.pokemon.length > 0">
+    <section class="w-full lg:w-10/12 p-4 lg:p-0 grid grid-cols-1 lg:grid-cols-3 gap-6" v-if="data.pokemon.length > 0">
       <Card v-for="pokemon in data.pokemon" :key="pokemon.name" :pokemon="pokemon"  />
     </section>
   </main>
@@ -49,6 +49,7 @@
       async function handleSearch(){
         if(data.typedPokemon){
           data.error = false
+          data.pokemon = []
           await getPokemonData(data.typedPokemon.toLowerCase())
         }else{
           data.error = true
@@ -57,11 +58,7 @@
 
       watch(() => pokemonData.value, value => { 
         if (value) {
-          if(data.pokemon.length < 3){
-            data.pokemon.push(value)
-          }else{
-            data.pokemon = [value]
-          }
+          data.pokemon.push(value)
         }
       })
 

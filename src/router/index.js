@@ -6,7 +6,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
       {
-        name:"index",
+        name:"VueDex",
         path:"/",
         component: Home,
         props:true,
@@ -15,12 +15,17 @@ const router = createRouter({
         path:"/my-starter",
         component: StarterPokemonPage,
         props:true,
+        name:"VueDex - My Starter",
       },
       {
         path: '/:pathMatch(.*)*',
-        redirect: { name: 'Home' },
+        redirect: { name: 'VueDex' },
       },
   ],
 })
+router.beforeEach((to, from, next) => {
+  document.title = to.name;
+  next();
+});
 
 export default router

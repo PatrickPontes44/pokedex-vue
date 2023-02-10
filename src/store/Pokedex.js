@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const state = {
     pokemonData: {},
-    pokemonEvolutions: []
+    pokemonEvolutions: [],
 }
 
 const actions = {
@@ -47,8 +47,8 @@ const mutations = {
       name: data.name.toUpperCase(),
       type: data.types[0].type.name,
       image: data.sprites.other["official-artwork"].front_default,
-      hp: data.stats[0].base_stat,
     }
+    data.stats.forEach((stat)=> parsedData[stat.stat.name] = stat.base_stat)
     state.pokemonData = parsedData
   },
   setPokemonEvolutions: (state, data) => {
