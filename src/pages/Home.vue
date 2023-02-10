@@ -24,9 +24,6 @@
   </main>
 </template>
   
-<!-- https://pokemondb.net/type -->
-
-<!-- https://pokeapi.co/docs/v2#evolution-section -->
 
 <script>
   import { mapActions, mapState } from '../store/VuexMaps'
