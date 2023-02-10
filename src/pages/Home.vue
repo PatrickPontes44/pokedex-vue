@@ -10,7 +10,7 @@
         class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline md:w-8/12 sm:w-full"
         v-model="data.typedPokemon">
         <button @click="handleSearch" class="transition ease-in-out delay-150 hover:scale-125">
-          <img class="w-5 md:w-10 md:w-10 lg:w-10 animate-bounce" src="../assets/images/pokeball.svg" />
+          <img class="w-5 md:w-10 lg:w-10 animate-bounce" src="../assets/images/pokeball.svg" />
         </button>
       </div>
       <datalist id="pokemonsList" class="bg-zinc" >

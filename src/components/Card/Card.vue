@@ -12,12 +12,20 @@
             class="bg-white rounded-xl text-zinc-900 p-4 flex flex-col justify-between leading-normal absolute top-[80%] left-0 w-full h-full hover:top-0 transition-[top]">
             <div class="font-bold text-md lg:text-lg xl:text-xl flex flex-row justify-between items-center">
                 {{ props.pokemon.name }}
-                <span
-                class="px-4 py-2 rounded-full font-semibold text-sm flex align-center w-max shadow"
-                :class="[Types[props.pokemon.type]?.background, Types[props.pokemon.type]?.color]"
-                >
-                    HP: {{ props.pokemon.hp }}
-                </span>
+                <div class="flex flex-row justify-center items-center gap-2">
+                    <span
+                    class="px-4 py-2 rounded-full font-semibold text-sm flex align-center w-max shadow"
+                    :class="[Types[props.pokemon.type]?.background, Types[props.pokemon.type]?.color]"
+                    >
+                        HP: {{ props.pokemon.hp }}
+                    </span>
+                    <span
+                    class="px-4 py-2 rounded-full font-semibold text-sm flex align-center w-max shadow"
+                    :class="[Types[props.pokemon.type]?.background, Types[props.pokemon.type]?.color]"
+                    >
+                        <img class="w-4 animate-pulse" :src="Types[props.pokemon.type]?.icon" />
+                    </span>
+                </div>
             </div>
         </div>
     </div>
