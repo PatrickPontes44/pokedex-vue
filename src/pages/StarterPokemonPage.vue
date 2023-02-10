@@ -1,11 +1,11 @@
 <template>
-    <h1>Test</h1>
+    <h1>StarterPokemonPage</h1>
 </template>
   
   <script>
   
   export default {
-    name: 'TestPage',
+    name: 'StarterPokemonPage',
   }
   </script>
   

@@ -1,4 +1,4 @@
 import Home from './Home.vue'
-import Test from './Test.vue'
+import StarterPokemonPage from './StarterPokemonPage.vue'
 
-export { Home, Test }
+export { Home, StarterPokemonPage }

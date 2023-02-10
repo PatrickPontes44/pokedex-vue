@@ -1,4 +1,4 @@
-import { Home, Test } from '../pages/index'
+import { Home, StarterPokemonPage } from '../pages/index'
 import { createRouter, createWebHistory } from 'vue-router'
 
 
@@ -12,8 +12,8 @@ const router = createRouter({
         props:true,
       },
       {
-        path:"/test",
-        component: Test,
+        path:"/my-starter",
+        component: StarterPokemonPage,
         props:true,
       },
       {

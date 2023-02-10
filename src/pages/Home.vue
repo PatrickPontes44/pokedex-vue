@@ -1,11 +1,17 @@
 <template>
-    <h1>Hello</h1>
-    {{ data.pokemon }}
+    <section
+      class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 container mx-auto"
+    >
+      <p v-for="pokemon in PokemonsList" :key="pokemon">{{ pokemon }}</p>
+    </section>
+
+    <!-- {{ data.pokemon }} -->
 </template>
   
 <script>
   import { mapActions, mapState } from '../store/VuexMaps'
   import { onMounted, reactive, watch } from "vue"
+  import { PokemonsList } from "../utils/pokemons.js"
   
   export default {
     name: 'HomePage',
@@ -31,6 +37,7 @@
         pokemonData,
         searchPokemon,
         data,
+        PokemonsList
       }
     }
   }
