@@ -1,18 +1,18 @@
 <template>
-    <section
-      class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 container mx-auto"
-    >
-      <p v-for="pokemon in PokemonsList" :key="pokemon">{{ pokemon }}</p>
-    </section>
+  <input list="pokemonsList" class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username">
+  <datalist id="pokemonsList" class="">
+    <option v-for="pokemon in PokemonsList" :key="pokemon" :value="pokemon" />
+  </datalist>
 
-    <!-- {{ data.pokemon }} -->
+
+  <!-- {{ data.pokemon }} -->
 </template>
   
 <script>
   import { mapActions, mapState } from '../store/VuexMaps'
   import { onMounted, reactive, watch } from "vue"
   import { PokemonsList } from "../utils/pokemons.js"
-  
+
   export default {
     name: 'HomePage',
     setup(){
